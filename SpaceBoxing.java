@@ -21,11 +21,17 @@ public class SpaceBoxing
       double space_weight = 1;
       switch (planet) {
         case 1: space_weight = weight * 0.78;
+                break;
         case 2: space_weight = weight * 0.39;
+                break;
         case 3: space_weight = weight * 2.65;
+                break;
         case 4: space_weight = weight * 1.17;
+                break;
         case 5: space_weight = weight * 1.05;
+                break;
         case 6: space_weight = weight * 1.23;
+                break;
       }
       System.out.println( "\nYour weight would be " + space_weight + " on that planet." );
     }
