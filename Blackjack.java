@@ -48,7 +48,7 @@ public class Blackjack
         }
 
         if (player_total > 21)
-            System.out.println("You bust!");
+            System.out.println("You bust! Dealer wins");
         else
         {
             System.out.println("\nDealer's hidden card is " + dealer_card2 + ".");
@@ -71,11 +71,11 @@ public class Blackjack
             else if (player_total == 21 && player_total == dealer_total)
             {
                 if (dealer_card3 == 0 && player_card3 != 0)
-                    System.out.println("Dealer Blackjack, you lose!");
+                    System.out.println("Dealer got a Blackjack, you lose!");
                 else if (dealer_card3 != 0 && player_card3 == 0)
-                    System.out.println("Great Blackjack, you win!");
+                    System.out.println("You got a Blackjack, you win!");
                 else
-                    System.out.println("Tie bet, all wagers returned");
+                    System.out.println("Tie - all bets returned");
             }
             else if (player_total > dealer_total)
                 System.out.println("YOU WIN!");
