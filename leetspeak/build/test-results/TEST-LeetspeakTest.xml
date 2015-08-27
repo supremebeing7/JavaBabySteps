@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LeetspeakTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2015-08-27T00:29:33" hostname="Deep-Thought.local" time="0.006">
+  <properties/>
+  <testcase name="leetspeak_forWordWithCapitalEs_replaceEs" classname="LeetspeakTest" time="0.003"/>
+  <testcase name="leetspeak_makesCorrectReplacesmentsRegardlessOfCase_ignoresUppercase" classname="LeetspeakTest" time="0.001"/>
+  <testcase name="leetspeak_forWordWithEs_replaceEs" classname="LeetspeakTest" time="0.0"/>
+  <testcase name="leetspeak_forWordWithCapitalOs_replaceOs" classname="LeetspeakTest" time="0.001"/>
+  <testcase name="leetspeak_forWordWithIs_replaceIs" classname="LeetspeakTest" time="0.0"/>
+  <testcase name="leetspeak_forWordWithCapitalSs_replaceSs" classname="LeetspeakTest" time="0.0"/>
+  <testcase name="leetspeak_forWordWithOs_replaceOs" classname="LeetspeakTest" time="0.0"/>
+  <testcase name="leetspeak_forWordWithNoLeetspeak_wordDoesNotChange" classname="LeetspeakTest" time="0.0"/>
+  <testcase name="leetspeak_forWordWithSs_replaceSs" classname="LeetspeakTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
