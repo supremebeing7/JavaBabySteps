@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ScrabbleScoreTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-08-30T06:30:40" hostname="Deep-Thought.local" time="0.004">
+  <properties/>
+  <testcase name="calculateScore_forWordWithOneTwoThreeFourFiveOrEightPointValueLetters_nineteen" classname="ScrabbleScoreTest" time="0.002"/>
+  <testcase name="calculateScore_forWordWithOnlyOnePointValueLetters_three" classname="ScrabbleScoreTest" time="0.0"/>
+  <testcase name="calculateScore_forWordWithOneOrTwoPointValueLetters_five" classname="ScrabbleScoreTest" time="0.0"/>
+  <testcase name="calculateScore_forWordWithOneTwoThreeFourOrFivePointValueLetters_fourteen" classname="ScrabbleScoreTest" time="0.0"/>
+  <testcase name="calculateScore_forWordWithAnyPointValueLetters_twentyFive" classname="ScrabbleScoreTest" time="0.0"/>
+  <testcase name="calculateScore_forWordWithOneTwoOrThreePointValueLetters_seven" classname="ScrabbleScoreTest" time="0.0"/>
+  <testcase name="calculateScore_forWordWithOneTwoThreeOrFourPointValueLetters_twelve" classname="ScrabbleScoreTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
