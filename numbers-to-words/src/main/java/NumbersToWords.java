@@ -29,7 +29,9 @@ public class NumbersToWords {
   public static String convertToWords(String numberString) {
     String numberWords = new String();
 
-    if ( numberString.length() <= 3 ) {
+    if ( numberString == "0" ) {
+      numberWords = "zero";
+    } else if ( numberString.length() <= 3 ) {
       numberWords = getHundredsDigits(Integer.parseInt(numberString));
     } else if ( numberString.length() > 3 && numberString.length() <= 6 ) {
       String thousands = numberString.substring(0, numberString.length() - 3);
@@ -44,7 +46,7 @@ public class NumbersToWords {
       String hundreds = numberString.substring(numberString.length() - 3, numberString.length());
       numberWords += getHundredsDigits(Integer.parseInt(hundreds));
     }
-    return numberWords;
+    return numberWords.trim();
   }
 
   public static String getHundredsDigits(Integer number) {
@@ -59,9 +61,7 @@ public class NumbersToWords {
 
   public static String getTensAndOnesDigits(Integer number) {
     String numberWord = new String();
-    if ( number == 0 ) {
-      numberWord = "zero";
-    } else if ( number < 10 ) {
+    if ( number < 10 ) {
       numberWord = getSingleDigit(number);
     } else if ( number >= 10 && number < 20 ) {
       numberWord = getTeensDigits(number);

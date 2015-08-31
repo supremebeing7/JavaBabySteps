@@ -9,6 +9,12 @@ public class NumbersToWordsTest {
   }
 
   @Test
+  public void convertToWords_forNumbersEndingWithZeros_fiveThousandTwoHundred() {
+    NumbersToWords testNumbersToWords = new NumbersToWords();
+    assertEquals("five thousand two hundred", testNumbersToWords.convertToWords("5200"));
+  }
+
+  @Test
   public void convertToWords_forSingleDigitNumber_one() {
     NumbersToWords testNumbersToWords = new NumbersToWords();
     assertEquals("one", testNumbersToWords.convertToWords("1"));
