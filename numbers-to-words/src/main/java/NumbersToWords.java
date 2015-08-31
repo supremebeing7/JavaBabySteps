@@ -28,23 +28,37 @@ public class NumbersToWords {
 
   public static String convertToWords(String numberString) {
     Integer number = Integer.parseInt(numberString);
-    return getTensAndOnesDigits(number);
+    // HashMap<Integer, String> conversions = new HashMap<Integer, String>();
+    String numberWords = getHundredsDigits(number);
+    return numberWords;
+  }
+
+  public static String getHundredsDigits(Integer number) {
+    String numberWords = new String();
+    if ( number >= 100 ) {
+      numberWords = getSingleDigit(number/100);
+      numberWords += " hundred ";
+    }
+    numberWords += getTensAndOnesDigits(number%100);
+    return numberWords;
   }
 
   public static String getTensAndOnesDigits(Integer number) {
     String numberWord = new String();
-    if ( number < 10 ) {
-      numberWord = getOnesDigit(number);
+    if ( number == 0 ) {
+      numberWord = "zero";
+    } else if ( number < 10 ) {
+      numberWord = getSingleDigit(number);
     } else if ( number >= 10 && number < 20 ) {
       numberWord = getTeensDigits(number);
     } else {
       numberWord = getTensDigit(number);
-      numberWord += getOnesDigit(number%10);
+      numberWord += getSingleDigit(number%10);
     }
     return numberWord;
   }
 
-  public static String getOnesDigit(Integer number) {
+  public static String getSingleDigit(Integer number) {
     String numberWord = new String();
 
     switch (number) {

@@ -3,6 +3,12 @@ import static org.junit.Assert.*;
 
 public class NumbersToWordsTest {
   @Test
+  public void convertToWords_forZero_zero() {
+    NumbersToWords testNumbersToWords = new NumbersToWords();
+    assertEquals("zero", testNumbersToWords.convertToWords("0"));
+  }
+
+  @Test
   public void convertToWords_forSingleDigitNumber_one() {
     NumbersToWords testNumbersToWords = new NumbersToWords();
     assertEquals("one", testNumbersToWords.convertToWords("1"));
