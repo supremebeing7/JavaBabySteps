@@ -27,9 +27,23 @@ public class NumbersToWords {
   }
 
   public static String convertToWords(String numberString) {
-    Integer number = Integer.parseInt(numberString);
-    // HashMap<Integer, String> conversions = new HashMap<Integer, String>();
-    String numberWords = getHundredsDigits(number);
+    String numberWords = new String();
+
+    if ( numberString.length() <= 3 ) {
+      numberWords = getHundredsDigits(Integer.parseInt(numberString));
+    } else if ( numberString.length() > 3 && numberString.length() <= 6 ) {
+      String thousands = numberString.substring(0, numberString.length() - 3);
+      numberWords = getHundredsDigits(Integer.parseInt(thousands)) + " thousand ";
+      String hundreds = numberString.substring(numberString.length() - 3, numberString.length());
+      numberWords += getHundredsDigits(Integer.parseInt(hundreds));
+    } else if ( numberString.length() > 6 && numberString.length() <= 9 ) {
+      String millions = numberString.substring(0, numberString.length() - 6);
+      numberWords = getHundredsDigits(Integer.parseInt(millions)) + " million ";
+      String thousands = numberString.substring(numberString.length() - 6, numberString.length() - 3);
+      numberWords += getHundredsDigits(Integer.parseInt(thousands)) + " thousand ";
+      String hundreds = numberString.substring(numberString.length() - 3, numberString.length());
+      numberWords += getHundredsDigits(Integer.parseInt(hundreds));
+    }
     return numberWords;
   }
 
