@@ -3,53 +3,56 @@ import static org.junit.Assert.*;
 
 public class NumbersToWordsTest {
   @Test
-  public void convertToWords_test_expectedResult() {
+  public void convertToWords_forSingleDigitNumber_one() {
     NumbersToWords testNumbersToWords = new NumbersToWords();
-    assertEquals("", testNumbersToWords.convertToWords(""));
+    assertEquals("one", testNumbersToWords.convertToWords("1"));
   }
 
   @Test
-  public void convertToWords_test_expectedResult() {
+  public void convertToWords_forNumberInTeens_twelve() {
     NumbersToWords testNumbersToWords = new NumbersToWords();
-    assertEquals("", testNumbersToWords.convertToWords(""));
+    assertEquals("twelve", testNumbersToWords.convertToWords("12"));
   }
 
   @Test
-  public void convertToWords_test_expectedResult() {
+  public void convertToWords_forDoubleDigitNumber_twentyTwo() {
     NumbersToWords testNumbersToWords = new NumbersToWords();
-    assertEquals("", testNumbersToWords.convertToWords(""));
+    assertEquals("twenty-two", testNumbersToWords.convertToWords("22"));
   }
 
   @Test
-  public void convertToWords_test_expectedResult() {
+  public void convertToWords_forRoundDoubleDigitNumber_sixty() {
     NumbersToWords testNumbersToWords = new NumbersToWords();
-    assertEquals("", testNumbersToWords.convertToWords(""));
+    assertEquals("sixty", testNumbersToWords.convertToWords("60"));
   }
 
   @Test
-  public void convertToWords_test_expectedResult() {
+  public void convertToWords_forThreeDigitNumber_threeHundredThirtyThree() {
     NumbersToWords testNumbersToWords = new NumbersToWords();
-    assertEquals("", testNumbersToWords.convertToWords(""));
+    assertEquals("three hundred thirty-three", testNumbersToWords.convertToWords("333"));
   }
 
   @Test
-  public void convertToWords_test_expectedResult() {
+  public void convertToWords_forFourDigitNumber_fourThousandFourHundredFortyFour() {
     NumbersToWords testNumbersToWords = new NumbersToWords();
-    assertEquals("", testNumbersToWords.convertToWords(""));
+    assertEquals("four thousand four hundred forty-four", testNumbersToWords.convertToWords("4444"));
   }
 
   @Test
-  public void convertToWords_test_expectedResult() {
+  public void convertToWords_forFiveDigitNumber_fiftyFiveThousandFiveHundredFiftyFive() {
     NumbersToWords testNumbersToWords = new NumbersToWords();
-    assertEquals("", testNumbersToWords.convertToWords(""));
+    assertEquals("fifty-five thousand five hundred fifty-five", testNumbersToWords.convertToWords("55555"));
+  }
+
+  @Test
+  public void convertToWords_forSevenDigitNumber_sevenMillionSevenHundredSeventySevenThousandSevenHundredSeventySeven() {
+    NumbersToWords testNumbersToWords = new NumbersToWords();
+    assertEquals("seven million seven hundred seventy-seven thousand seven hundred seventy-seven", testNumbersToWords.convertToWords("7777777"));
+  }
+
+  @Test
+  public void convertToWords_forNineDigitNumber_nineHundredNinetyNineMillionNineHundredNinetyNineThousandNineHundredNinetyNine() {
+    NumbersToWords testNumbersToWords = new NumbersToWords();
+    assertEquals("nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine", testNumbersToWords.convertToWords("999999999"));
   }
 }
-
-// Points:
-// A, E, I, O, U, L, N, R, S, T       1
-// D, G                               2
-// B, C, M, P                         3
-// F, H, V, W, Y                      4
-// K                                  5
-// J, X                               8
-// Q, Z                               10
