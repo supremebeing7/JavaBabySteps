@@ -37,4 +37,24 @@ public class PalindromeTest {
     Palindrome testApp = new Palindrome();
     assertEquals(false, testApp.isPalindrome("raver"));
   }
+  @Test
+  public void isPalindrome_numberPalindrome_true() {
+    Palindrome testApp = new Palindrome();
+    assertEquals(true, testApp.isPalindrome("12321"));
+  }
+  @Test
+  public void isPalindrome_numberNonPalindrome_false() {
+    Palindrome testApp = new Palindrome();
+    assertEquals(false, testApp.isPalindrome("1232421"));
+  }
+  @Test
+  public void isPalindrome_fullSentencePalindrome_true() {
+    Palindrome testApp = new Palindrome();
+    assertEquals(true, testApp.isPalindrome("Straw? No, too stupid a fad. I put soot on warts."));
+  }
+  @Test
+  public void isPalindrome_fullSentenceNonPalindrome_false() {
+    Palindrome testApp = new Palindrome();
+    assertEquals(false, testApp.isPalindrome("Straw? No, too stupid a fad. I only put soot on warts."));
+  }
 }
