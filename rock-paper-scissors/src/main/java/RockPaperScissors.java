@@ -22,9 +22,11 @@ public class RockPaperScissors {
       String playerSelection = request.queryParams("play");
       String computerSelection = getRandomSelection();
       String result = getResult(playerSelection.toLowerCase(), computerSelection);
+      String resultSentence = String.format("You played %s and the computer played %s.", playerSelection, computerSelection);
       model.put("playerSelection", playerSelection);
       model.put("computerSelection", computerSelection);
       model.put("result", result.toUpperCase());
+      model.put("resultSentence", resultSentence);
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
