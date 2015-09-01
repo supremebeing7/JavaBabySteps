@@ -47,4 +47,10 @@ public class RockPaperScissorsTest {
     RockPaperScissors testApp = new RockPaperScissors();
     assertEquals("loss", testApp.getResult("paper", "scissors"));
   }
+  @Test
+  public void getRandomSelection_randomlyChooses_true() {
+    RockPaperScissors testApp = new RockPaperScissors();
+    String computerChoice = testApp.getRandomSelection();
+    assertEquals(true, computerChoice instanceof String);
+  }
 }
