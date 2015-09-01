@@ -21,12 +21,22 @@ public class RockPaperScissorsIntegrationTest extends FluentTest {
       assertThat(pageSource()).contains("Rock Paper Scissors");
   }
 
-  // @Test
-  //   public void submitForm() {
-  //     goTo("http://localhost:4567");
-  //     fill("#number").with("2004");
-  //     submit(".btn");
-  //     assertThat(pageSource()).contains("in words:");
-  //     assertThat(pageSource()).contains("two thousand four");
-  //   }
+  @Test
+  public void playRock() {
+    goTo("http://localhost:4567");
+    click("#rock");
+    assertThat(pageSource()).contains("You played rock and the computer played");
+  }
+  @Test
+  public void playPaper() {
+    goTo("http://localhost:4567");
+    click("#paper");
+    assertThat(pageSource()).contains("You played paper and the computer played");
+  }
+  @Test
+  public void playScissors() {
+    goTo("http://localhost:4567");
+    click("#scissors");
+    assertThat(pageSource()).contains("You played scissors and the computer played");
+  }
 }
