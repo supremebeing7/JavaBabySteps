@@ -57,4 +57,9 @@ public class PalindromeTest {
     Palindrome testApp = new Palindrome();
     assertEquals(false, testApp.isPalindrome("Straw? No, too stupid a fad. I only put soot on warts."));
   }
+  @Test
+  public void formattedInput_sentenceWithSpecialChars_specialCharsRemoved() {
+    Palindrome testApp = new Palindrome();
+    assertEquals("strawnotoostupidafadiputsootonwarts", testApp.formattedInput("Straw? No, too stupid a fad. I put soot on warts."));
+  }
 }
