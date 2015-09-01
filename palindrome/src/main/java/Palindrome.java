@@ -31,7 +31,18 @@ public class Palindrome {
     }, new VelocityTemplateEngine());
   }
 
-  public static Boolean isPalindrome(Object input) {
-    return true;
+  public static Boolean isPalindrome(String input) {
+    Boolean palindrome = true;
+    String[] characters = input.split("");
+    for ( int leftIndex = 0; leftIndex < characters.length/2; leftIndex++ ) {
+      int rightIndex = characters.length - (leftIndex + 1);
+      String rightSideCharacter = characters[rightIndex];
+      String leftSideCharacter = characters[leftIndex];
+      if ( !leftSideCharacter.equals(rightSideCharacter) ) {
+        palindrome = false;
+        break;
+      }
+    }
+    return palindrome;
   }
 }
