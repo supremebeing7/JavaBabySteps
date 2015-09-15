@@ -1,5 +1,6 @@
 import java.util.Map;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Random;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
@@ -32,7 +33,7 @@ public class App {
   }
 
   public static String getResult(Integer cents) {
-    Map<String, Integer> coins = new HashMap<String, Integer>();
+    Map<String, Integer> coins = new LinkedHashMap<String, Integer>();
     coins.put("quarter", cents / 25);
     cents = cents - (coins.get("quarter") * 25);
     coins.put("dime", cents / 10);
