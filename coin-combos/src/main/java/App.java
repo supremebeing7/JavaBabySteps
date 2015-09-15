@@ -30,22 +30,24 @@ public class App {
 
   public static String getResult(Integer cents) {
     Map<String, Integer> coins = new LinkedHashMap<String, Integer>();
-    if ( cents / 25 > 0 ) {
+    String depleted = depletedCoinType();
+    if ( !depleted.equals("quarters") && cents / 25 > 0 ) {
       coins.put("quarter", cents / 25);
       cents = cents - (coins.get("quarter") * 25);
     }
-    if ( cents / 10 > 0 ) {    
+    if ( !depleted.equals("dimes") && cents / 10 > 0 ) {    
       coins.put("dime", cents / 10);
       cents = cents - (coins.get("dime") * 10);
     }
-    if ( cents / 5 > 0 ) {    
+    if ( !depleted.equals("nickels") && cents / 5 > 0 ) {    
       coins.put("nickel", cents / 5);
       cents = cents - (coins.get("nickel") * 5);
     }
     if ( cents > 0 ) {
       coins.put("penny", cents);
     }
-    return formattedCoinDescription(coins);
+    String disclaimer = "Out of " + depleted + ". Your change is: "; 
+    return disclaimer + formattedCoinDescription(coins);
   }
 
   public static String formattedCoinDescription(Map<String, Integer> coins) {
@@ -78,5 +80,12 @@ public class App {
     } else {
       return coinType + "s";
     }
+  }
+
+  public static String depletedCoinType() {
+    String[] options = {"quarters", "dimes", "nickels"};
+    Random randomSelectionMaker = new Random();
+    Integer selection = randomSelectionMaker.nextInt(3);
+    return options[selection];
   }
 }
