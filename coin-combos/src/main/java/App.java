@@ -20,14 +20,10 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/result.vtl");
 
-      // String playerSelection = request.queryParams("play");
-      // String computerSelection = getRandomSelection();
-      // String result = getResult(playerSelection.toLowerCase(), computerSelection);
-      // String resultSentence = String.format("You played %s and the computer played %s.", playerSelection, computerSelection);
-      // model.put("playerSelection", playerSelection);
-      // model.put("computerSelection", computerSelection);
-      // model.put("result", result.toUpperCase());
-      // model.put("resultSentence", resultSentence);
+      String cents = request.queryParams("cents");
+      String result = getResult(Integer.parseInt(cents));
+      model.put("cents", cents);
+      model.put("result", result);
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }

@@ -1,7 +1,12 @@
-<h1>Rock Paper Scissors</h1>
+<h1>Coin Combinations</h1>
 
-<p>Choose "rock", "paper", or "scissors" and try to beat the computer!</p>
+<p>Input some amount of cents (less than 100) and we'll calculate how many coins you get back:</p>
 
-<a href='/result?play=rock' id="rock" class="btn btn-info">Rock</a>
-<a href='/result?play=paper' id="paper" class="btn btn-warning">Paper</a>
-<a href='/result?play=scissors' id="scissors" class="btn btn-success">Scissors</a>
+<form action='/result' method='get'>
+  <div class="form-group">
+    <label for="cents">Cents:</label>
+    <input id="cents" name="cents" class="form-control" type="text">
+  </div>
+
+  <button type="submit" class="btn btn-info">GO</button>
+</form>
