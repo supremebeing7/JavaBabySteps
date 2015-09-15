@@ -34,27 +34,44 @@ public class App {
 
   public static String getResult(Integer cents) {
     Map<String, Integer> coins = new LinkedHashMap<String, Integer>();
-    coins.put("quarter", cents / 25);
-    cents = cents - (coins.get("quarter") * 25);
-    coins.put("dime", cents / 10);
-    cents = cents - (coins.get("dime") * 10);
-    coins.put("nickel", cents / 5);
-    cents = cents - (coins.get("nickel") * 5);
-    coins.put("penny", cents);
+    if ( cents / 25 > 0 ) {
+      coins.put("quarter", cents / 25);
+      cents = cents - (coins.get("quarter") * 25);
+    }
+    if ( cents / 10 > 0 ) {    
+      coins.put("dime", cents / 10);
+      cents = cents - (coins.get("dime") * 10);
+    }
+    if ( cents / 5 > 0 ) {    
+      coins.put("nickel", cents / 5);
+      cents = cents - (coins.get("nickel") * 5);
+    }
+    if ( cents > 0 ) {
+      coins.put("penny", cents);
+    }
     return formattedCoinDescription(coins);
   }
 
   public static String formattedCoinDescription(Map<String, Integer> coins) {
     String result = new String();
+    int i = 1;
     for ( Map.Entry<String, Integer> entry : coins.entrySet()) {
       String coinType = entry.getKey();
       Integer numberOfCoins = entry.getValue();
-      if ( numberOfCoins > 0 ) {
-        if ( numberOfCoins > 1 ) {
-          coinType = pluralized(coinType);
-        }
-        result += numberOfCoins.toString() + " " + coinType + " ";
+      if ( numberOfCoins > 1 ) {
+        coinType = pluralized(coinType);
       }
+      result += numberOfCoins.toString() + " " + coinType;
+      if ( i < coins.size() && coins.size() > 1 ) { 
+        if ( i == 1 && coins.size() == 2 ) {
+          result += " and ";
+        } else if ( i <= coins.size() - 2 ) {
+          result += ", ";
+        } else {
+          result += ", and ";
+        }
+      }
+      i++;
     }
     return result.trim();
   }

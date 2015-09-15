@@ -44,16 +44,16 @@ public class AppTest {
   @Test
   public void getResult_fortyCents_oneQuarterOneDimeOneNickel() {
     App testApp = new App();
-    assertEquals("1 quarter, 1 dime and 1 nickel", testApp.getResult(40));
+    assertEquals("1 quarter, 1 dime, and 1 nickel", testApp.getResult(40));
   }
   @Test
   public void getResult_fortyOneCents_oneQuarterOneDimeOneNickelOnePenny() {
     App testApp = new App();
-    assertEquals("1 quarter, 1 dime, 1 nickel and 1 penny", testApp.getResult(41));
+    assertEquals("1 quarter, 1 dime, 1 nickel, and 1 penny", testApp.getResult(41));
   }
   @Test
   public void getResult_ninetyNineCents_threeQuartersTwoDimesFourPennies() {
     App testApp = new App();
-    assertEquals("3 quarters, 2 dimes, 4 pennies", testApp.getResult(99));
+    assertEquals("3 quarters, 2 dimes, and 4 pennies", testApp.getResult(99));
   }
 }
